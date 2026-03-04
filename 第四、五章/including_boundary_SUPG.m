@@ -292,7 +292,7 @@ for i = 1:N
     H1_semi = H1_semi + sum(weights .* der_error.^2);
 end
 error_h = sqrt(L_2(end)^2 + epsilon*H1_semi);
-fprintf('H1误差: %.2e\n',error_h);
+fprintf('H1误差_NN: %.2e\n',error_h);
 
 
 %%
@@ -303,7 +303,7 @@ diff = max(F_sub - u_e_sub) - min(F_sub - u_e_sub);
 
 max_1 = max(abs(F_right-u_e_right));
 
-fprintf('max_1: %.2e\n',max_1);
+fprintf('max误差_NN: %.2e\n',max_1);
 fprintf('diff: %.2e\n',diff);
 
 %%
@@ -371,4 +371,5 @@ hold on;
 plot(x(N/2+1:N+1), error1_right, 'LineWidth', 1.5);  % 解析解
 legend( '节点绝对值误差', 'Location', 'northwest');
 xlim([1 - tau,1]);  % 设置x轴范围
+
 ylim([0,1.5e-3]);  % 设置y轴范围
