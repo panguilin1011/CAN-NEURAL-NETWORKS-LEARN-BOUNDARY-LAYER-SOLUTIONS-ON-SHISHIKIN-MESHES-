@@ -166,8 +166,12 @@ for cycle = 1:N_iter
     dw3 = 2*dw3;
     dw3 = dw3 + beta*W3;
 
+%%
+%若在不提供任何信息时不对这一部分进行注释
+%若在提供足够多的信息时对这一部分进行注释
 %     b2 = b2 - eta*db2;
 %     W2 = W2 - eta*dw2;
+%%
     W3 = W3 - eta*dw3;
 
     newcost = cost(F_value,M,N,b2,W2,W3,beta,gamma);
@@ -373,3 +377,4 @@ legend( '节点绝对值误差', 'Location', 'northwest');
 xlim([1 - tau,1]);  % 设置x轴范围
 
 ylim([0,1.5e-3]);  % 设置y轴范围
+
